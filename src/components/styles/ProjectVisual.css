@@ -1,0 +1,136 @@
+.project-visual-canvas {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: radial-gradient(circle at 50% 50%, rgba(30, 20, 45, 0.7) 0%, rgba(12, 10, 16, 0.95) 100%);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-box:hover .project-visual-canvas {
+  border-color: rgba(194, 164, 255, 0.35);
+  box-shadow: 0 8px 30px rgba(127, 64, 255, 0.2);
+}
+
+.visual-glow-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(194, 164, 255, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.visual-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.visual-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #c2a4ff;
+  background: rgba(12, 10, 16, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(194, 164, 255, 0.25);
+  pointer-events: none;
+}
+
+/* Wave Bar Animation for NOVA (active only when in view) */
+@keyframes waveOscillate {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.35);
+  }
+}
+
+.wave-bar {
+  transform-origin: center;
+  animation: waveOscillate 1.8s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.visual-is-active .wave-bar {
+  animation-play-state: running;
+}
+
+@keyframes visualSvgReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.visual-svg-enter {
+  animation: visualSvgReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.project-visual-placeholder {
+  background: linear-gradient(135deg, rgba(18, 14, 26, 0.92), rgba(28, 20, 42, 0.75));
+}
+
+@keyframes visualShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.visual-shimmer-pulse {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(194, 164, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: visualShimmer 1.6s infinite;
+}
+
+.visual-lazy-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.visual-lazy-image.loaded {
+  opacity: 0.25;
+}
+
+@media screen and (max-width: 768px) {
+  .project-visual-canvas {
+    height: 150px;
+  }
+}

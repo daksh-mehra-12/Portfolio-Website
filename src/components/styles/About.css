@@ -1,0 +1,136 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  place-items: center;
+  position: relative;
+  opacity: 1;
+  min-height: auto;
+  height: auto;
+  width: var(--cWidth);
+  margin: 20px auto 0 auto;
+  padding: 24px 0 32px 0;
+  box-sizing: border-box;
+}
+
+.about-me {
+  padding: 20px 0px;
+  width: 650px;
+  max-width: 100%;
+}
+
+.about-me h3.title {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 500;
+  color: var(--accentColor);
+  margin-bottom: 20px;
+}
+
+.about-me p.para {
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #e6e1ec;
+  letter-spacing: 0.2px;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.85);
+}
+
+.about-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.about-highlight-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(12, 9, 20, 0.94);
+  border: 1px solid rgba(194, 164, 255, 0.18);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.about-highlight-card:hover {
+  background: rgba(16, 12, 26, 0.92);
+  border-color: rgba(194, 164, 255, 0.42);
+  transform: translateY(-2px);
+}
+
+.about-card-icon {
+  font-size: 20px;
+  color: var(--accentColor);
+  background: rgba(194, 164, 255, 0.14);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-highlight-card h4 {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #f5f2f8;
+  margin: 0 0 4px 0;
+}
+
+.about-highlight-card p {
+  font-size: 12.5px;
+  color: #b8b1c0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.about-highlight-card strong {
+  color: var(--accentColor);
+}
+
+@media only screen and (max-width: 768px) {
+  .about-section {
+    margin: 12px auto 0 auto;
+    padding: 16px 0 28px 0;
+    min-height: auto;
+  }
+  .about-me {
+    width: 100%;
+    padding: 10px 0;
+  }
+  .about-me p.para {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .about-highlights-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .about-section {
+    width: var(--cWidth);
+    justify-content: flex-end;
+    max-width: 1300px;
+    min-height: auto;
+    margin-top: 24px;
+    padding: 32px 0px 40px 0px;
+  }
+  .about-me {
+    width: 50%;
+    max-width: 620px;
+    margin-left: auto;
+  }
+  .about-me p.para {
+    font-size: clamp(16px, 1.2vw, 19px);
+    line-height: 1.65;
+  }
+}
